@@ -3,33 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maggie's Personal Website</title>
+    <title>Maggie's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="your-photo.jpg" alt="Maggie's Photo" class="profile-photo">
-            <h1>Maggie</h1>
-            <p>Hi, I'm Maggie, a sophomore studying Physics and EECS at MIT.</p>
-        </header>
-        <main>
-            <section>
-                <h2>About Me</h2>
-                <p>This is where you can add some information about yourself.</p>
-            </section>
-            <section>
-                <h2>Projects</h2>
-                <p>Details about your projects will go here.</p>
-            </section>
-            <section>
-                <h2>Contact</h2>
-                <p>How people can get in touch with you.</p>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2024 Manxi Shi</p>
-        </footer>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to My Website!</h1>
+        <p>Hi, I'm Maggie! I'm an undergraduate studying Electrical Engineering and Physics at MIT.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>A brief description of your academic journey, interests, and extracurriculars.</p>
+    </section>
+
+    <section id="research">
+        <h2>Research</h2>
+        <p>Details of your research in photonics, AI, or other projects.</p>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <p><a href="resume.pdf" target="_blank">Download my resume (PDF)</a></p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Showcase of notable projects, including brief descriptions and links to GitHub or project demos.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/{your_form_id}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Maggie</p>
+    </footer>
 </body>
 </html>
