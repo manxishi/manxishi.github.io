@@ -1,79 +1,47 @@
-* {
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #f1c8cb;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    color: #1e140a;
 }
 
-body {
-    font-family: 'Calibri', sans-serif; /* Changed to Calibri */
-    background-color: #ffffff; /* White background */
-    color: #333;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    line-height: 1.6;
+    background-color: #afc19e;
+    border-radius: 10px;
 }
 
 header {
-    background-color: #bfdcba; /* Green */ 
-    color: #333;
-    padding: 20px 0;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background-color: #f7e1ea; /* Pink */
-    padding: 10px;
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #1e140a;
 }
 
-nav ul li {
-    margin: 0 15px;
+h1 {
+    color: #1e140a;
 }
 
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-h1, h2 {
-    color: #666666; /* Darker gray for headings */
+main {
+    margin-bottom: 20px;
 }
 
 section {
-    background-color: #ffffff; /* White section background */
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #666666; /* Gray button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555555; /* Slightly darker on hover */
+    margin-bottom: 20px;
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #f7e1ea; /* Pink */
-    color: #333;
-    margin-top: 30px;
+    background-color: #1e140a;
+    color: #f1c8cb;
+    border-radius: 5px;
 }
