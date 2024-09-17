@@ -1,18 +1,19 @@
 /* General Styles */
 :root {
-    --primary-color: #4CAF50; /* Green */
-    --secondary-color: #FF69B4; /* Pink */
+    --primary-color: #ddd1ec; /* Lavender */
+    --secondary-color: #8f78a8; /* Lavender purple */
     --text-color: #333;
     --background-color: #fff;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Calibri', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    padding-bottom: 30px; /* Add padding to accommodate the smaller footer */
 }
 
 header {
@@ -97,13 +98,14 @@ button:hover {
 
 footer {
     text-align: center;
-    padding: 15px;
+    padding: 5px; /* Reduced padding */
     background-color: var(--primary-color);
     color: var(--background-color);
     position: fixed;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    font-size: 12px; /* Smaller font size */
+    opacity: 0.9; /* Slightly transparent */
 }
 
 /* Responsive design */
