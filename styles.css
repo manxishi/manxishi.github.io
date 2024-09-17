@@ -75,7 +75,7 @@ section {
 }
 
 section h1, section h2 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-top: 0;
     border-bottom: 2px solid var(--secondary-color);
     padding-bottom: 10px;
