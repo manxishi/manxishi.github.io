@@ -1,19 +1,19 @@
 /* General Styles */
 :root {
-    --primary-color: #ddd1ec; /* Lavender */
-    --secondary-color: #8f78a8; /* Lavender purple */
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #FF69B4; /* Pink */
     --text-color: #333;
     --background-color: #fff;
 }
 
 body {
-    font-family: 'Calibri', sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    padding-bottom: 30px; /* Add padding to accommodate the smaller footer */
+    padding-bottom: 60px; /* Increased padding to accommodate footer and extra space */
 }
 
 header {
@@ -21,6 +21,23 @@ header {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portrait {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--secondary-color);
+}
+
+.portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 header nav ul {
@@ -98,18 +115,22 @@ button:hover {
 
 footer {
     text-align: center;
-    padding: 5px; /* Reduced padding */
+    padding: 5px;
     background-color: var(--primary-color);
     color: var(--background-color);
     position: fixed;
     bottom: 0;
     width: 100%;
-    font-size: 12px; /* Smaller font size */
-    opacity: 0.9; /* Slightly transparent */
+    font-size: 12px;
+    opacity: 0.9;
 }
 
 /* Responsive design */
 @media (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+
     header nav ul {
         flex-direction: column;
         align-items: center;
@@ -117,5 +138,9 @@ footer {
     
     header nav ul li {
         margin: 10px 0;
+    }
+
+    .portrait {
+        margin-bottom: 20px;
     }
 }
