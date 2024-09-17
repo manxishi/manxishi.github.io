@@ -1,6 +1,7 @@
 /* General Styles */
 :root {
     --primary-color: #c7b8d8; /* Lavender */
+    --another-color: #bea8d8;
     --secondary-color: #6f5090; /* Dark lavender */
     --text-color: #333;
     --background-color: #fff;
@@ -75,7 +76,7 @@ section {
 }
 
 section h1, section h2 {
-    color: var(--secondary-color);
+    color: var(--another-color);
     margin-top: 0;
     border-bottom: 2px solid var(--secondary-color);
     padding-bottom: 10px;
