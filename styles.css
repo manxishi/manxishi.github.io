@@ -6,17 +6,24 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    background-color: #fdf5e6; /* Light beige */
     color: #333;
-    background-color: #f4f4f4;
     padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #f4cccc; /* Light pink */
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    background-color: #333;
+    background-color: #f4cccc; /* Light pink */
     padding: 10px;
 }
 
@@ -25,30 +32,48 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #333;
     text-decoration: none;
     font-size: 18px;
 }
 
-header {
-    background-color: #444;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+h1, h2 {
+    color: #d36e70; /* A darker pink for headings */
 }
 
 section {
+    background-color: #ffffff; /* White section background */
     margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    color: #444;
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #d36e70; /* Matching darker pink */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b35a5b; /* Darker shade on hover */
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #333;
-    color: white;
+    background-color: #f4cccc; /* Light pink */
+    color: #333;
     margin-top: 30px;
 }
