@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-color: #e6e6fa; /* Lavender */
+    background-color: #bfdcba; /* Green */ 
     color: #333;
     padding: 20px 0;
     text-align: center;
@@ -23,7 +23,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    background-color: #e6e6fa; /* Lavender */
+    background-color: #f7e1ea; /* Pink */
     padding: 10px;
 }
 
@@ -73,7 +73,7 @@ button:hover {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #e6e6fa; /* Lavender */
+    background-color: #f7e1ea; /* Pink */
     color: #333;
     margin-top: 30px;
 }
