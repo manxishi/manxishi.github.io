@@ -5,15 +5,15 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fdf5e6; /* Light beige */
+    font-family: 'Calibri', sans-serif; /* Changed to Calibri */
+    background-color: #ffffff; /* White background */
     color: #333;
     padding: 20px;
     line-height: 1.6;
 }
 
 header {
-    background-color: #f4cccc; /* Light pink */
+    background-color: #e6e6fa; /* Lavender */
     color: #333;
     padding: 20px 0;
     text-align: center;
@@ -23,7 +23,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    background-color: #f4cccc; /* Light pink */
+    background-color: #e6e6fa; /* Lavender */
     padding: 10px;
 }
 
@@ -38,7 +38,7 @@ nav ul li a {
 }
 
 h1, h2 {
-    color: #d36e70; /* A darker pink for headings */
+    color: #666666; /* Darker gray for headings */
 }
 
 section {
@@ -59,7 +59,7 @@ input, textarea {
 
 button {
     padding: 10px 20px;
-    background-color: #d36e70; /* Matching darker pink */
+    background-color: #666666; /* Gray button */
     color: white;
     border: none;
     border-radius: 5px;
@@ -67,13 +67,13 @@ button {
 }
 
 button:hover {
-    background-color: #b35a5b; /* Darker shade on hover */
+    background-color: #555555; /* Slightly darker on hover */
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #f4cccc; /* Light pink */
+    background-color: #e6e6fa; /* Lavender */
     color: #333;
     margin-top: 30px;
 }
