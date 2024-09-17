@@ -1,19 +1,19 @@
 /* General Styles */
 :root {
-    --primary-color: #b7a3cd; /* Lavender */
+    --primary-color: #c7b8d8; /* Lavender */
     --secondary-color: #6f5090; /* Dark lavender */
     --text-color: #333;
     --background-color: #fff;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Calibri', 'Arial', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    padding-bottom: 60px; /* Increased padding to accommodate footer and extra space */
+    padding-bottom: 60px; /* Accommodate footer and extra space */
 }
 
 header {
@@ -90,7 +90,8 @@ form {
     flex-direction: column;
 }
 
-input, textarea {
+input, textarea, button {
+    font-family: 'Calibri', 'Arial', sans-serif;
     margin-bottom: 15px;
     padding: 12px;
     border: 1px solid var(--primary-color);
@@ -102,10 +103,7 @@ button {
     background-color: var(--primary-color);
     color: var(--background-color);
     border: none;
-    padding: 12px;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
