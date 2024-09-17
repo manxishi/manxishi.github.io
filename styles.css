@@ -1,41 +1,79 @@
+/* General Styles */
 body {
     font-family: Roboto, sans-serif;
     background-color: #f1c8cb;
+    color: #1e140a;
     margin: 0;
     padding: 0;
-    color: #1e140a;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 20px;
     background-color: #afc19e;
-    border-radius: 10px;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .profile-photo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 5px solid #1e140a;
 }
 
-h1 {
-    color: #1e140a;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-main {
-    margin-bottom: 20px;
+nav ul li {
+    display: inline;
+    margin-left: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1e140a;
+    font-weight: bold;
 }
 
 section {
-    margin-bottom: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #afc19e;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #1e140a;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #1e140a;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #1e140a;
+    color: #f1c8cb;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #afc19e;
 }
 
 footer {
@@ -43,5 +81,7 @@ footer {
     padding: 10px;
     background-color: #1e140a;
     color: #f1c8cb;
-    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
