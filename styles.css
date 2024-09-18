@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Calibri', 'Arial', sans-serif;
+    font-family: 'Inter', 'Calibri', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
