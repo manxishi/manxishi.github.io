@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A Study of Variation Across Attention Heads and Layers</title>
+<meta property="og:title" content="A Study of Variation Across Attention Heads and Layers" />
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f9ff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Header styles */
+.paper-header {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.paper-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.author-list {
+  margin-bottom: 1rem;
+}
+
+.author {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+
+/* Section styles */
+section {
+  margin: 2rem 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem 0;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 1.5rem 0 1rem 0;
+  color: #444;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+/* Figure styles */
+figure {
+  margin: 2rem 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #666;
+}
+
+/* Link styles */
+a {
+  color: #0e7862;
+  text-align: left;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #24b597;
+}
+
+/* Math display */
+.math {
+  overflow-x: auto;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* References section */
+.references {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.references p {
+  margin: 0.5rem 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  overflow-x: auto;
+  display: block;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Arrays and matrices */
+.array-equation {
+  text-align: center;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+/* Code blocks */
+code {
+  background: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .container {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .paper-title {
+    font-size: 1.75rem;
+  }
+  
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <!-- Header Section -->
+  <header class="paper-header">
+    <h1 class="paper-title">A Study of Variation Across Attention Heads and Layers</h1>
+    <div class="author-list">
+      <span class="author"><a href="your_website">Maggie Shi</a></span>
+      <span class="author"><a href="your_partner's_website">Alina Yang</a></span>
+    </div>
+    <div>Final project for 6.7960, MIT</div>
+  </header>
+
+  <!-- Introduction Section -->
+  <section id="introduction">
+    <h1>Introduction</h1>
+    <p>The Transformer model was introduced in 2017 <a href="#ref_1">[1]</a>. Since then, it has achieved remarkable progress in a variety of tasks, including computer vision <a href="#ref_2">[2]</a> and natural language processing <a href="#ref_3">[3]</a>.</p>
+    
+    <p>Due to how large many transformer models are, it is not trivial to understand their behavior and determine how they could be modified. But, such work would be greatly beneficial to determine how to reduce the memory or computation needed for training, as well as increase interpretability.</p>
+    
+    <p>One avenue along which this has been pursued is by examining the representations that different models use. Huh et al. propose a platonic/ideal representation <a href="#ref_4">[4]</a>—the notion that there's a certain representation that is most effective at capturing data, and many models get close to this. Such a result led us to hypothesize that as the layer of a model increases, because it is approaching this ideal representation, there is less variation in the weights of the attention matrices.</p>
+  </section>
+
+  <!-- Similarity Across Layers Section -->
+  <section id="similarity">
+    <h1>Similarity Across Layers</h1>
+    <p>In order to examine our hypothesis that later layers are more similar to one another, we examined the progression of various metrics of the query, key, and value matrices of each head across the layers.</p>
+    
+    <p>Our first metric was looking at the kernel alignment metric, which measures how similar two mappings are. Given two matrices \(P, Q\), the kernel alignment metric is given by:</p>
+    
+    <div class="math">
+      \[ \frac{\text{Tr}(P Q)}{\sqrt{\text{Tr}(P^2) \cdot \text{Tr}(Q^2)}}. \]
+    </div>
+
+    <figure>
+      <img src="images/similarity-large.png" alt="Similarity across layers">
+      <figcaption>Figure 1: Similarity of weights from layer i to i+1</figcaption>
+    </figure>
+  </section>
+
+  <!-- Our Four Metrics Section -->
+  <section id="metrics">
+    <h1>Our Four Metrics</h1>
+    <h2>Sparsity</h2>
+    <p>One property of matrices is sparsity. In the purest sense, the sparseness of a matrix is measured by the number of entries it has that are equal to zero. Because our neural network weights are tuned with an optimizer, none of the weights are exactly equal to zero.</p>
+
+    <figure>
+      <img src="images/sparsity.png" alt="Sparsity">
+      <figcaption>Figure 2: Comparison of sparsity in weight matrices for BERT-base-uncased</figcaption>
+    </figure>
+
+    <div class="array-equation">
+      <p>Correlation matrices for BERT-large-uncased (left) and BERT-base-uncased (right) for the number of entries close to zero:</p>
+      $$
+      \begin{array}{c|ccc}
+          & \text{Q} & \text{K} & \text{V} \\
+          \hline
+          \text{Q} & 1 & 0.919 & 0.001 \\
+          \text{K} & 0.919 & 1 & 0.108 \\
+          \text{V} & 0.001 & 0.108 & 1
+      \end{array}
+      \qquad
+      \begin{array}{c|ccc}
+          & \text{Q} & \text{K} & \text{V} \\
+          \hline
+          \text{Q} & 1 & 0.904 & -0.167 \\
+          \text{K} & 0.904 & 1 & -0.133 \\
+          \text{V} & -0.167 & -0.133 & 1
+      \end{array}
+      $$
+    </div>
+  </section>
+
+  <!-- Continue with other sections following the same pattern... -->
+
+  <!-- References Section -->
+  <section id="references" class="references">
+    <h1>References</h1>
+    <p id="ref_1">[1] <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>, Vaswani et al., 2017</p>
+    <p id="ref_2">[2] <a href="https://link.springer.com/chapter/10.1007/978-3-030-58452-8_13">End-to-End Object Detection with Transformers</a>, Carion et al., 2020</p>
+    <p id="ref_3">[3] <a href="https://arxiv.org/abs/1906.08237">XLNet: Generalized Autoregressive Pretraining for Language Understanding</a>, Yang et al., 2019</p>
+    <!-- Continue with other references... -->
+  </section>
+
+</div>
+</body>
+</html>
