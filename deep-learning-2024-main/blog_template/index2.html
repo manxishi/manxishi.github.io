@@ -488,10 +488,7 @@ code {
 <section id="mathematicalbackground">
     <h1>Mathematical Background</h1>
     <h2>Hadamard product</h2>
-    <p>The Hadamard product involves element-wise multiplication between two matrices, and these two matrices must have the same dimension. It is denoted with the symbol \(\odot\). If two matrices \(P,Q\) both have the same dimension and \(P_{ij}\) denotes the element in row \(i\), column \(j\), then \(P \odot Q\) is the matrix given by</p>
-    <div class="math">
-        \[(P \odot Q)_{ij} = P_{ij} Q_{ij}.\]
-    </div>
+    <p>The Hadamard product involves element-wise multiplication between two matrices, and these two matrices must have the same dimension. It is denoted with the symbol \(\odot\). If two matrices \(P,Q\) both have the same dimension and \(P_{ij}\) denotes the element in row \(i\), column \(j\), then \(P \odot Q\) is the matrix given by \[(P \odot Q)_{ij} = P_{ij} Q_{ij}.\] </p>
     <h2>Effective Rank</h2>
     <p>For any matrix \(B\), we compute its singular value decomposition, \(A = U \Lambda V.\) Then, entries along the diagonal of diagonal matrix \(\Lambda\) are our singular values, \(\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_k.\) If we let \(\sigma = (\sigma_1, \dots, \sigma_k)\), then the effective rank is equal to \(\exp \left(  \sum_{i=1}^k - \frac{\sigma_i}{||\sigma||_1}  \log \left( \frac{\sigma_i}{||\sigma||_1} \right) \right)\). </p>
     <h2>Condition Number</h2>
