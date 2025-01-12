@@ -492,6 +492,20 @@ code {
     <div class="math">
         \[(P \odot Q)_{ij} = P_{ij} Q_{ij}.\]
     </div>
+    <h2>Effective Rank</h2>
+    <p>For any matrix \(B\), we compute its singular value decomposition, \(A = U \Lambda V.\) Then, entries along the diagonal of diagonal matrix \(\Lambda\) are our singular values, \(\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_k.\) If we let \(\sigma = (\sigma_1, \dots, \sigma_k)\), then the effective rank is equal to \(\exp \left(  \sum_{i=1}^k - \frac{\sigma_i}{||\sigma||_1}  \log \left( \frac{\sigma_i}{||\sigma||_1} \right) \right)\). </p>
+    <div class="math">
+        \[
+        \exp \left(  \sum_{i=1}^k - \frac{\sigma_i}{||\sigma||_1}  \log \left( \frac{\sigma_i}{||\sigma||_1} \right) \right)
+        \]
+    </div>
+    <h2>Condition Number</h2>
+    <p>The condition number is the ratio of the magnitude of the largest singular value to the smallest singular value. When this is large, that indicates that a certain direction dominates in the mapping performed by the matrix, which indicates that the matrix is less stable, because a small perturbation in the input is more likely to result in a substantially different output.</p>
+    <div class="math">
+        \[
+        \frac{\text{Tr}(P Q)}{\sqrt{\text{Tr}(P^2) \cdot \text{Tr}(Q^2)}}.
+        \]
+    </div>
 </section>
   <!-- Continue with other sections following the same pattern... -->
   <!-- References Section -->
