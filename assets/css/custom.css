@@ -1,0 +1,401 @@
+/* Custom styles inspired by Lilian Weng's clean design */
+
+/* Font settings - Nunito and Lato (Calibri-like fallback) */
+body {
+    font-family: Nunito, Lato, Calibri, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    word-break: break-word;
+    background: var(--theme);
+}
+
+/* Homepage welcome section with profile image */
+.home-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.home-info img {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.home-info-text {
+    flex: 1;
+}
+
+/* Discreet homepage links */
+.home-links {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--secondary);
+}
+
+.home-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.home-links a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.home-links .separator {
+    margin: 0 0.5rem;
+    color: var(--secondary);
+    opacity: 0.5;
+}
+
+/* Hide all social icons everywhere */
+.social-icons {
+    display: none !important;
+}
+
+.social-icons * {
+    display: none !important;
+}
+
+/* Hide share buttons */
+.share-buttons {
+    display: none !important;
+}
+
+.share-buttons * {
+    display: none !important;
+}
+
+/* Hide profile mode elements */
+.ProfileMode {
+    display: none !important;
+}
+
+/* Hide any social links in footer (but not theme attribution links) */
+footer .social-icons,
+footer a[href*="twitter.com"],
+footer a[href*="x.com"],
+footer a[href*="reddit.com"],
+footer a[href*="linkedin.com"] {
+    display: none !important;
+}
+
+/* Ensure PaperMod attribution link is visible */
+footer a[href*="hugo-PaperMod"] {
+    display: inline !important;
+}
+
+/* Clean typography and spacing - reduced heading sizes */
+h1 {
+    font-size: 1.75rem !important;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.4rem !important;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.2rem !important;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.1rem !important;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1.05rem !important;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 1rem !important;
+    font-weight: 600;
+}
+
+#content h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#content h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#content p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Cleaner post list styling */
+.post-entry {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-entry:last-child {
+    border-bottom: none;
+}
+
+.post-entry h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.post-entry .entry-meta {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Form styling for contact page */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+form input, form textarea, form button {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    background: var(--theme);
+}
+
+form button {
+    background-color: var(--primary);
+    color: var(--theme);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+}
+
+form button:hover {
+    opacity: 0.8;
+}
+
+/* Minimal header styling */
+header {
+    border-bottom: 1px solid var(--border);
+}
+
+/* Clean links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* Homepage blog posts section */
+.home-blog-header {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.home-blog-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.home-post-entry {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.home-post-entry:last-of-type {
+    border-bottom: none;
+}
+
+.home-post-entry .entry-header h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.home-post-entry .entry-header h3 a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.home-post-entry .entry-header h3 a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.home-post-entry .entry-content {
+    margin-bottom: 0.75rem;
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+.home-post-entry .entry-footer {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
+.home-post-entry .entry-meta {
+    font-style: italic;
+}
+
+.home-post-entry .entry-tags {
+    color: var(--secondary);
+}
+
+.home-blog-footer {
+    margin-top: 2rem;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.home-blog-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.home-blog-footer a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* Research posts section */
+.research-posts-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.research-posts-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.research-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.research-post-entry {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+}
+
+.research-post-entry:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.research-post-entry .entry-header h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.research-post-entry .entry-header h3 a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.research-post-entry .entry-header h3 a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.research-post-entry .entry-content {
+    margin-bottom: 0.75rem;
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+.research-post-entry .entry-footer {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
+.research-post-entry .entry-meta {
+    font-style: italic;
+}
+
+.research-post-entry .entry-tags {
+    color: var(--secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .home-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .home-info img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .home-post-entry .entry-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .research-post-entry .entry-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+

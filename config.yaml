@@ -1,0 +1,60 @@
+baseURL: "https://manxishi.github.io/"
+title: "Manxi (Maggie) Shi"
+theme: "PaperMod"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  title: "Manxi (Maggie) Shi"
+  description: "Undergraduate studying EECS and Physics at MIT"
+  author: "Manxi (Maggie) Shi"
+  keywords: ["AI", "Machine Learning", "Deep Learning", "Research"]
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  images: ["/headshot.jpg"]
+  profileMode:
+    enabled: false
+    # Disabled to use custom layout instead
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: research
+      name: Research
+      url: /research/
+      weight: 20
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: 30
+
+# Social icons removed - keeping it minimal
+
+# Main sections for blog posts
+mainSections: ["posts"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  # Enable math rendering
+  math: true
+

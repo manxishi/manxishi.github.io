@@ -1,0 +1,59 @@
+{{ define "main" }}
+<main class="main">
+    <article class="post-entry">
+        <div class="home-info">
+            {{ $imagePath := "/headshot.jpg" }}
+            {{ if .Site.Params.images }}
+                {{ $imagePath = index .Site.Params.images 0 }}
+            {{ end }}
+            <img src="{{ $imagePath | relURL }}" alt="Profile picture" />
+            <div class="home-info-text">
+                {{ .Content }}
+            </div>
+        </div>
+    </article>
+    
+    {{ if .Site.Params.mainSections }}
+        {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+        {{ $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+        {{ $paginator := .Paginate $pages }}
+        
+        {{ if gt (len $paginator.Pages) 0 }}
+        <header class="home-blog-header">
+            <h2>Recent Posts</h2>
+        </header>
+        
+        {{ range first 5 $paginator.Pages }}
+        <article class="post-entry home-post-entry">
+            <header class="entry-header">
+                <h3>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ if .Draft }}
+                    <span class="entry-isdraft">[draft]</span>
+                    {{ end }}
+                </h3>
+            </header>
+            {{ if .Summary }}
+            <div class="entry-content">
+                <p>{{ .Summary | plainify | htmlUnescape }}</p>
+            </div>
+            {{ end }}
+            <footer class="entry-footer">
+                {{ if .Params.date }}
+                <span class="entry-meta">{{ .Date.Format "January 2, 2006" }}</span>
+                {{ end }}
+                {{ if .Params.tags }}
+                <span class="entry-tags">{{ delimit .Params.tags ", " }}</span>
+                {{ end }}
+            </footer>
+        </article>
+        {{ end }}
+        
+        <div class="home-blog-footer">
+            <a href="/posts/">View all posts →</a>
+        </div>
+        {{ end }}
+    {{ end }}
+</main>
+{{ end }}
+

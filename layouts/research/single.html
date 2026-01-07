@@ -1,0 +1,68 @@
+{{ define "main" }}
+<main class="main">
+  <article class="post-single">
+    <header class="post-header">
+      {{ partial "breadcrumbs.html" . }}
+      <h1>{{ .Title }}</h1>
+      {{- if .Description }}
+      <div class="post-description">
+        {{ .Description }}
+      </div>
+      {{- end }}
+    </header>
+
+    {{- if .Content }}
+    <div class="post-content">
+      {{- if not (.Param "disableAnchoredHeadings") }}
+        {{- partial "anchored_headings.html" .Content -}}
+      {{- else }}{{ .Content }}{{ end }}
+    </div>
+    {{- end }}
+
+    <!-- Research Posts Section -->
+    {{ $researchPosts := where site.RegularPages "Params.tags" "intersect" (slice "Research") }}
+    {{ if gt (len $researchPosts) 0 }}
+    <div class="research-posts-section">
+      <h2>Related Research Posts</h2>
+      <div class="research-posts-list">
+        {{ range $researchPosts }}
+        <article class="research-post-entry">
+          <header class="entry-header">
+            <h3>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              {{ if .Draft }}
+              <span class="entry-isdraft">[draft]</span>
+              {{ end }}
+            </h3>
+          </header>
+          {{ if .Summary }}
+          <div class="entry-content">
+            <p>{{ .Summary | plainify | htmlUnescape }}</p>
+          </div>
+          {{ end }}
+          <footer class="entry-footer">
+            {{ if .Params.date }}
+            <span class="entry-meta">{{ .Date.Format "January 2, 2006" }}</span>
+            {{ end }}
+            {{ if .Params.tags }}
+            <span class="entry-tags">{{ delimit .Params.tags ", " }}</span>
+            {{ end }}
+          </footer>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <footer class="post-footer">
+      {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+      <ul class="post-tags">
+        {{- range ($.GetTerms $tags) }}
+        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        {{- end }}
+      </ul>
+    </footer>
+  </article>
+</main>
+{{ end }}
+
