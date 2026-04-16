@@ -2,7 +2,7 @@
 title: "Are LLMs secretly EBMs"
 date: 2026-02-26
 draft: false
-description: "From a recent paper"
+description: "On a recent paper"
 tags: ["LLMs", "Research"]
 ---
 

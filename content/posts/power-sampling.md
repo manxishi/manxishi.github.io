@@ -2,7 +2,7 @@
 title: "Notes on Power Sampling"
 date: 2026-02-03
 draft: false
-description: "From a recent paper"
+description: "On a recent paper"
 tags: ["LLMs", "Research"]
 ---
 

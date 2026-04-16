@@ -53,8 +53,16 @@ mainSections: ["posts"]
 
 markup:
   goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - $$
+            - $$
+          inline:
+          - - $
+            - $
     renderer:
       unsafe: true
-  # Enable math rendering
   math: true
 

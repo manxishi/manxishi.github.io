@@ -2,7 +2,7 @@
 title: "Physics of Language"
 date: 2025-11-04
 draft: false
-description: "On interesting things I'm learning about language models during my research"
+description: "On things I'm learning about language models during my research"
 tags: ["LLMs", "Research"]
 ---
 
@@ -31,4 +31,4 @@ Currently, to find a temperature schedule that achieves a constant marginal enrt
 
 How do we make this more computationally tractible?
 Marginal entropy is what we want, but there could be some proxy to this. Some logits statistics shortcut can use variance as a proxy to the marginal entropy over the full vocabulary.
-It would be a lot easier to do online updates, like control-theory esque updates to the temperature, based on some observed entropy vs target entropy. However, note that this is no longer marginal entropy if we are only looking at a singular sequence. Though we could generate a few in a batch and call it an approximation of marginal entropy. But that's not very accurate.
+It would be a lot easier to do online updates, like control-theory esque updates to the temperature, based on some observed entropy vs target entropy. However, note that this is no longer marginal entropy if we are only looking at a singular sequence. Though we could generate a few in a batch and call it an approximation of marginal entropy. But that's not very accurate since its true form is an average over infinitely many samples.
