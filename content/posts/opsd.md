@@ -1,5 +1,5 @@
 ---
-title: "Notes on On-Policy Self-Distillation"
+title: "On-Policy Self-Distillation"
 date: 2026-04-15
 draft: false
 description: "On a recent paper"
